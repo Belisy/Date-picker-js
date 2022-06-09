@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date Picker</title>
+    <link rel="favicon" href="./favicon.ico" />
+    <link rel="stylesheet" href="dist/scss/style.css" />
+    <script defer src="dist/js/index.js"></script>
+  </head>
+  <body>
+    <div class="date-picker">
+      <!-- 날짜 -->
+      <div class="date-container">
+        <div class="date-input"></div>
+        <div class="current">today</div>
+      </div>
+
+      <!-- 달력 -->
+      <div class="calendar active" id="calendar">
+        <div class="month" id="month">
+          <div class="arrows" id="prev">&lt;</div>
+          <div class="mth" id="content"></div>
+          <div class="arrows" id="next">&gt;</div>
+        </div>
+        <div class="days" id="days">
+          <div class="day">SUN</div>
+          <div class="day">MON</div>
+          <div class="day">TUE</div>
+          <div class="day">WED</div>
+          <div class="day">THU</div>
+          <div class="day">FRI</div>
+          <div class="day">SAT</div>
+        </div>
+        <div class="dates">
+          <!-- 날짜 -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

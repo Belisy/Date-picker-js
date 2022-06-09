@@ -1,0 +1,139 @@
+.date-picker {
+  position: relative;
+  color: #313131;
+  .date-container {
+    position: absolute;
+    top: 30;
+    left: 0;
+    right: 0;
+    width: 600px;
+    height: 34px;
+    display: inline;
+    margin: 30px auto;
+    .date-input {
+      // 날짜
+      width: 200px;
+      height: 30px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-color: rgb(244, 219, 230);
+      border: 2px solid lightgray;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      transition: background-color 1s;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(254, 143, 193);
+      }
+    }
+    .current {
+      background-color: rgb(192, 235, 238);
+      border: 2px solid lightgray;
+      border-radius: 10px;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+      width: 55px;
+      line-height: 28px;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      position: absolute;
+      bottom: -10px;
+      right: 30px;
+    }
+  }
+
+  .calendar {
+    // 달력
+    display: none;
+    background-color: beige;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 80px auto;
+    border: 3px solid lightgray;
+    border-radius: 20px;
+    width: 600px;
+    text-align: center;
+    padding: 3px 3px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+    &.active {
+      display: block;
+      transition: 1s;
+    }
+
+    .month {
+      // 월
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      font-weight: 700;
+      line-height: 2rem;
+      border-bottom: 1px solid lightgray;
+      padding-bottom: 3px;
+      .arrows {
+        width: 35px;
+        height: 35px;
+      }
+      .arrows:hover {
+        cursor: pointer;
+        color: rgb(117, 116, 116);
+      }
+      .arrows#prev {
+        text-align: start;
+      }
+      .arrows#next {
+        text-align: end;
+        position: absolute;
+        right: 3px;
+      }
+    }
+
+    .days {
+      // 요일
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      font-weight: 700;
+      line-height: 2.4rem;
+      padding: auto;
+      border-bottom: 1px solid lightgray;
+      .day:first-child {
+        color: rgb(246, 5, 5);
+      }
+      .day:last-child {
+        color: rgb(128, 21, 250);
+      }
+    }
+
+    .dates {
+      // 날짜
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      .date {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #313131;
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        &.today {
+          background-color: rgb(192, 235, 238);
+        }
+        &.selected {
+          background-color: rgb(245, 193, 228);
+        }
+        &.today.selected {
+          background-color: rgb(223, 192, 238);
+        }
+      }
+    }
+  }
+}
